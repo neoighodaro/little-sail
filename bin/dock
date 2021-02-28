@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+NC='\033[0m'
+WHITE='\033[1;37m'
+
+# Ensure that Docker is running...
+if ! docker info > /dev/null 2>&1; then
+    echo -e "==> ${WHITE}Docker is not running.${NC}" >&2
+    exit 1
+fi
+
+# Determine if Sail is currently up...
+PHP74RUNTIME="$(cat docker-compose.yml | grep 'runtimes/7.4')"
+PHP80RUNTIME="$(cat docker-compose.yml | grep 'runtimes/8.0')"
+
+if docker-compose ps | grep 'Exit'; then
+    echo -e "==> ${WHITE}Shutting down old Sail processes...${NC}" >&2
+    docker-compose down > /dev/null 2>&1
+fi
+
+if [[ ! -z $(cat docker-compose.yml | grep 'runtimes/7.4') ]]; then PHPRUNTIME='sail-7.4/app';
+elif [[ ! -z $(cat docker-compose.yml | grep 'runtimes/8.0') ]]; then PHPRUNTIME='sail-8.0/app';
+else
+    echo -e "==> ${WHITE}Unknown sail runtime.${NC}" >&2
+    exit 1
+fi;
+
+if [[ ! -z $(docker images | grep $PHPRUNTIME) ]]; then
+    echo -e "==> ${WHITE}Removing the ${PHPRUNTIME} Docker image...${NC}" >&2
+    docker rmi --force $PHPRUNTIME
+fi
+
+
+echo -e "==> ${WHITE}Re-run \`sail up\` to rebuild using little sail.${NC}" >&2

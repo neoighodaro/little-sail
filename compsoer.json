@@ -1,0 +1,28 @@
+{
+    "name": "neo/little-sail",
+    "description": "Smaller Alpine based image for Laravel Sail runtimes",
+    "keywords": ["laravel", "docker", "neo", "little-sail"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/neoighodaro/little-sail/issues",
+        "source": "https://github.com/neoighodaro/little-sail"
+    },
+    "authors": [
+        {
+            "name": "Neo Ighodaro",
+            "email": "neo@creativitykills.co"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/sail": "^1.4"
+    },
+    "bin": [
+        "bin/dock"
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
