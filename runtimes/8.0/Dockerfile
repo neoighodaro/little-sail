@@ -7,7 +7,7 @@ WORKDIR /var/www/html
 ENV TZ=UTC
 ENV DEBIAN_FRONTEND noninteractive
 
-COPY php.ini /etc/php/8.0/cli/conf.d/99-sail.ini
+COPY php.ini /usr/local/etc/php/conf.d/99-sail.ini
 COPY start-container /usr/local/bin/start-container
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
