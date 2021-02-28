@@ -39,7 +39,7 @@ services:
     api:
         build:
             context: ./vendor/laravel/sail/runtimes/8.0      # Replace this
-            context: ./vendor/neo/little-sail/runtumes/8.0   # With this
+            context: ./vendor/neo/little-sail/runtimes/8.0   # With this
 # ...
 ```
 
