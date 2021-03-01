@@ -36,8 +36,8 @@ version: '3'
 services:
     api:
         build:
-            context: ./vendor/laravel/sail/runtimes/8.0      # Replace this
-            context: ./vendor/neo/little-sail/runtimes/8.0   # With this (or 7.4 if thats what you want)
+            context: ./vendor/laravel/sail/runtimes/8.0             # Replace this
+            context: ./vendor/neo/little-sail/runtimes/8.0-alpine   # With this (or 7.4 if thats what you want)
 # ...
 ```
 
