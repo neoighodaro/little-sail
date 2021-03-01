@@ -50,3 +50,10 @@ $ ./vendor/bin/dock
 ```
 
 Then when the command is done running, you can bring Laravel Sail up again.
+
+## Customising Little Sail runtimes
+If you want, you can update the Little Sail runtimes to work specifically for you. Run:
+
+```shell
+$ php artisan little-sail:publish # or sail artisan little-sail:publish
+```

@@ -20,6 +20,18 @@
     "bin": [
         "bin/dock"
     ],
+    "autoload": {
+        "psr-4": {
+            "Neo\\LittleSail\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Neo\\LittleSail\\LittleSailServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true
     },
