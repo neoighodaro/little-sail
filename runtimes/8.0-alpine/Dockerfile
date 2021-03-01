@@ -18,7 +18,7 @@ RUN set -eux; \
     # Install persistent / runtime deps
     && apk --update add --no-cache tzdata gnupg su-exec zip unzip git supervisor sqlite libcap nodejs npm \
     # Install PHP extensions
-    && install-php-extensions ldap redis intl soap imap mysqli memcached msgpack pgsql bcmath igbinary gd zip \
+    && install-php-extensions ldap redis intl soap imap pdo_mysql memcached msgpack pgsql bcmath igbinary gd zip \
     && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin/ --filename=composer \
     # Clean up
     && rm -rf /usr/share/php /usr/share/php8 /usr/src/* /usr/local/bin/phpdbg \
