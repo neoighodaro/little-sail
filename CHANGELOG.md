@@ -1,8 +1,12 @@
 # Release Notes
 
-## v1.0.4 (2021-12-21)
+## v1.0.5 (2021-12-21)
 
 - Support for PHP 8.1
+
+## v1.0.4 (2021-03-01)
+
+- Bug fixes and improvements
 
 ## v1.0.3 (2021-03-01)
 
