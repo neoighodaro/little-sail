@@ -1,5 +1,9 @@
 # Release Notes
 
+## v1.0.4 (2021-12-21)
+
+- Support for PHP 8.1
+
 ## v1.0.3 (2021-03-01)
 
 - Fixed issue with missing driver
