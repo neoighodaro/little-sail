@@ -9,9 +9,6 @@ if ! docker info > /dev/null 2>&1; then
     exit 1
 fi
 
-# Determine if Sail is currently up...
-PHP74RUNTIME="$(cat docker-compose.yml | grep 'runtimes/7.4')"
-PHP80RUNTIME="$(cat docker-compose.yml | grep 'runtimes/8.0')"
 
 if docker-compose ps | grep 'Exit'; then
     echo -e "==> ${WHITE}Shutting down old Sail processes...${NC}" >&2
@@ -20,6 +17,7 @@ fi
 
 if [[ ! -z $(cat docker-compose.yml | grep 'runtimes/7.4') ]]; then PHPRUNTIME='sail-7.4/app';
 elif [[ ! -z $(cat docker-compose.yml | grep 'runtimes/8.0') ]]; then PHPRUNTIME='sail-8.0/app';
+elif [[ ! -z $(cat docker-compose.yml | grep 'runtimes/8.1') ]]; then PHPRUNTIME='sail-8.1/app';
 else
     echo -e "==> ${WHITE}Unknown sail runtime.${NC}" >&2
     exit 1
