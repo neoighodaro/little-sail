@@ -6,7 +6,8 @@
 
 ## v1.0.4 (2021-03-01)
 
-- Bug fixes and improvements
+- Added new way to install composer
+- Added `.ashrc` to allow adding aliases
 
 ## v1.0.3 (2021-03-01)
 
