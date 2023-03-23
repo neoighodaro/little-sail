@@ -31,6 +31,7 @@ class PublishCommand extends Command
 
         file_put_contents($this->laravel->basePath('docker-compose.yml'), str_replace(
             [
+                './vendor/neo/little-sail/runtimes/8.2',
                 './vendor/neo/little-sail/runtimes/8.1',
                 './vendor/neo/little-sail/runtimes/8.0',
                 './vendor/neo/little-sail/runtimes/7.4',
@@ -39,9 +40,11 @@ class PublishCommand extends Command
                 './vendor/laravel/sail/runtimes/7.4',
             ],
             [
+                './docker/8.2-alpine',
                 './docker/8.1-alpine',
                 './docker/8.0-alpine',
                 './docker/7.4-alpine',
+                './docker/8.2',
                 './docker/8.1',
                 './docker/8.0',
                 './docker/7.4',
